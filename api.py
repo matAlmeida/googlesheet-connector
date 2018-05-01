@@ -17,6 +17,7 @@ def hello():
 
     return "running"
 
+# Returns all entries in a speadsheet by the speadsheet id
 # Retorna todas entradas de uma planilha pelo id da planilha
 @app.route('/sheet/<string:spreadsheet_id>', methods=['GET'])
 def get_sheet_by_id(spreadsheet_id=None):
@@ -25,6 +26,7 @@ def get_sheet_by_id(spreadsheet_id=None):
 
     return jsonify(info)
 
+# Returns all entries in a row of a speadsheet by its id
 # Retorna todas as entradas de uma linha de uma planilha pelo seu id
 @app.route('/sheet/<string:spreadsheet_id>/row/<string:row>', methods=['GET'])
 def get_sheet_row_by_id(spreadsheet_id=None, row=None):
@@ -33,6 +35,7 @@ def get_sheet_row_by_id(spreadsheet_id=None, row=None):
 
     return jsonify(info)
 
+# Returns all the entries in a column of a speadsheet by its id
 # Retorna todas as entradas de uma coluna de uma planilha pelo seu id
 @app.route('/sheet/<string:spreadsheet_id>/col/<string:col>', methods=['GET'])
 def get_sheet_col_by_id(spreadsheet_id=None, col=None):
@@ -41,7 +44,8 @@ def get_sheet_col_by_id(spreadsheet_id=None, col=None):
 
     return jsonify(info)
 
-# Retorna a entrada de uma celula especifica de uma planilha pelo seu id
+# Returns the entry of a specific cell in a speadsheet by its id
+# Retorna a entrada de uma célula especifica de uma planilha pelo seu id
 @app.route('/sheet/<string:spreadsheet_id>/<string:row>/<string:column>', methods=['GET'])
 def get_sheet_cell_by_id(spreadsheet_id=None, row=None, column=None):
     sheet = client.open_by_key(spreadsheet_id).sheet1
