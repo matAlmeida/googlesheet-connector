@@ -20,4 +20,4 @@ Access the `localhost:5000/` to see if shows the message `running`
 
 Read the `api.py` code for the others entry points
 
-You can create using the api provided by [gsheet](https://github.com/burnash/gspread)
+You can create more endpoints using the api provided by [gsheet](https://github.com/burnash/gspread)
