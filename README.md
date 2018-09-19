@@ -20,4 +20,7 @@ Access the `localhost:5000/` to see if shows the message `running`
 
 Read the `api.py` code for the others entry points
 
+## In Production
+Remove the `debug=True` flag in the last line of the `api.py`
+
 You can create more endpoints using the api provided by [gsheet](https://github.com/burnash/gspread)
